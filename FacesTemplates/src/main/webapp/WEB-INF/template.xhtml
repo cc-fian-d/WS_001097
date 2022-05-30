@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="" name="bootstrap.css"></h:outputStylesheet>
+	<h:outputStylesheet library="" name="myStyle.css"></h:outputStylesheet>
+</h:head>
+<body>
+
+	<div class="container-sm rounded-3 text-center bg-dark text-white">
+		Oben Hier entsteht eine Applikation für den J2EEWorkshop</div>
+
+	<div class="container-md p-3 my-3 border rounded-3 bg-light text-black">
+		<ui:include src="/WEB-INF/navi.xhtml" />
+	</div>
+
+	<div class="container-md p-3 my-3 border rounded-3 bg-light text-black">
+		<ui:insert name="inhalt-mitte"></ui:insert>
+	</div>
+
+	<div class="container-md p-3 my-3 border rounded-3 bg-light text-black">
+		<ui:insert name="inhalt-unten"></ui:insert>
+	</div>
+
+	<div class="container-md p-3 my-3 border rounded-3 bg-light text-black">(C)
+		2022 J2EE Workshop</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+	<h:form id="userDataFrm">
+		<h:outputLabel value="Vorname" />
+		<h:inputText id="inputVorname" value="#{mensch.vorname}" />
+		<br />
+		<h:outputLabel value="Nachname" />
+		<h:inputText id="inputNachname" value="#{mensch.nachname}" />
+		<h:commandButton value="Anzeigen">
+			<f:ajax execute="inputVorname inputNachname" render="ausgabeMensch ausgabeMenschHashCode"></f:ajax>
+		</h:commandButton>
+	</h:form>
+
+	<h:outputText value="#{mensch}" id="ausgabeMenschHashCode" />
+	<br />
+	<h:outputText value="#{mensch.vorname}" id="ausgabeMensch"/>
+	
+	
+</body>
+</html>
