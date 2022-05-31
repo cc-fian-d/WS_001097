@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+	<h:panelGrid id="telephone" columns="3">
+		<h:commandButton actionListener="#{keypadController.pressed}" value="1" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="2" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="3" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="4" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="5" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="6" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="7" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="8" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="9" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="*" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="0" />
+		<h:commandButton actionListener="#{keypadController.pressed}" value="#" />
+	
+	</h:panelGrid>
+
+</ui:composition>

@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/template.xhtml">
+
+
+	<ui:define name="inhalt">
+		<h:form>
+			<h:panelGrid id="keypad">
+				<ui:include  src="#{keypadController.keypad}" />
+			</h:panelGrid>
+		
+			<h:commandButton action="#{keypadController.toggle}" value="Umschalten" >
+				<f:ajax render="keypad" />
+			</h:commandButton>
+		</h:form>
+	</ui:define>
+
+
+
+
+</ui:composition>
+
+
