@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	#{user.premium} : #{user.role}
+	<br />
+	<h:link value="Seite 2 - Implizite Navigation" outcome="page2" />
+	<br />
+	<h:link value="Seite 2 - Explizite Navigation" outcome="secondPage"/>
+	<br />
+	<h:link value="Admin - Navigationregel" outcome="admin"/>
+	<br />
+	<h:link value="Verwaltung - Navigationregel" outcome="#{user.role}"/>
+	<br/>
+	<h:link value="Pagecontroller - Navigationregel" outcome="#{pageController.moveToPage2()}"/>
+	
+	<br />
+	<h:form>
+		<h:commandButton action="#{user.sudo}" value="Sudo" />
+		<br />
+		<h:commandButton action="#{user.changePremium}" value="Premium" />
+	</h:form>
+	
+</body> 
+</html>
