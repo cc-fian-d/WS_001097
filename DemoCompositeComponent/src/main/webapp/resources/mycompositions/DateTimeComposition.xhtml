@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:comp="http://java.sun.com/jsf/composite"> 
+
+<comp:interface>
+	<comp:attribute name="message"/>
+	<comp:attribute name="time" type="java.time.LocalTime"/>
+</comp:interface>
+
+<comp:implementation>
+	<h:panelGrid columns="2">
+		<h:outputLabel for="msg" value="Message: " />
+		<h:outputLabel id="msg" value="#{cc.attrs.message}" />
+		<h:outputLabel for="time" value="Time:  " />
+		<h:outputLabel id="time" value="#{cc.attrs.time}" />
+	</h:panelGrid>
+
+</comp:implementation>
+
+</html>

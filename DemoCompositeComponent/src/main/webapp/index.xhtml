@@ -13,9 +13,13 @@
 	<my:register firstnameLabel="Bitte Vornamen eingeben"
 		nameLabel="Bitte Nachname eingeben"
 		emailLabel="Bitte eine Email eingeben" registerText="Registrieren"
-		emailValue="#{user.email}" firstnameValue="#{user.firstname}" nameValue="#{user.lastname}"
-		registerActionListener="#{user.pressed}"
-		></my:register>
+		emailValue="#{user.email}" firstnameValue="#{user.firstname}"
+		nameValue="#{user.lastname}"></my:register>
+
+	<br />
+
+	<my:DateTimeComposition message="#{messageTimeBean.message}"
+		time="#{messageTimeBean.time}"/>
 
 </body>
 </html>
