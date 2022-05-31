@@ -8,8 +8,9 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class MessageTimeBean {
-
+	
 	public String getMessage() {
+		
 		return "Kompositions Komponenten sind toll";
 	}
 	

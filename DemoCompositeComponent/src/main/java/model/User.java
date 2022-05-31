@@ -59,5 +59,9 @@ public class User implements Serializable {
 		}
 
 	}
+	
+	public String login() {
+		return "success";
+	}
 
 }

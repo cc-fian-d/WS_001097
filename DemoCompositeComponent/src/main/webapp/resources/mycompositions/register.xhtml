@@ -15,7 +15,7 @@
 	<comp:attribute name="emailValue"/>
 
 	<comp:attribute name="registerText"/>
-	<comp:attribute name="registerActionListener"/>
+	<comp:attribute name="registerAction" method-signature="java.lang.String action()"/>
 	
 </comp:interface>
 
@@ -37,7 +37,7 @@
 		
 		</h:panelGrid>
 		
-		<h:commandButton actionListener="#{user.pressed}" value="#{cc.attrs.registerText}" />
+		<h:commandButton action="#{cc.attrs.registerAction}" value="#{cc.attrs.registerText}" />
 	
 	</h:form>
 
