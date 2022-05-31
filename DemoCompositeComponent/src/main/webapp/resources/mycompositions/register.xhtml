@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:comp="http://java.sun.com/jsf/composite"> 
+
+
+<comp:interface>
+	<comp:attribute name="nameLabel" required="true"/>
+	<comp:attribute name="nameValue"/>
+	<comp:attribute name="firstnameLabel" required="true"/>
+	<comp:attribute name="firstnameValue"/>
+	<comp:attribute name="emailLabel" required="true"/>
+	<comp:attribute name="emailValue"/>
+
+	<comp:attribute name="registerText"/>
+	<comp:attribute name="registerActionListener"/>
+	
+</comp:interface>
+
+<comp:implementation>
+
+	<h:form>
+		<h:message for="registerPanel" style="color:red;"/>
+		
+		<h:panelGrid columns="2" id="registerPanel">
+		
+		#{cc.attrs.firstnameLabel} : 
+		<h:inputText id="firstname" value="#{cc.attrs.firstnameValue}" />
+		
+		#{cc.attrs.nameLabel} : 
+		<h:inputText id="name" value="#{cc.attrs.nameValue}" />
+		
+		#{cc.attrs.emailLabel} : 
+		<h:inputText id="email" value="#{cc.attrs.emailValue}" />		
+		
+		</h:panelGrid>
+		
+		<h:commandButton actionListener="#{cc.attrs.registerActionListener}" value="#{cc.attrs.registerText}" />
+	
+	</h:form>
+
+</comp:implementation>
+
+</html>
