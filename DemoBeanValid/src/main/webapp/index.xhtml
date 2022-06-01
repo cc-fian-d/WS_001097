@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+	<h:form >
+		<h:messages style="color:red"/>
+		<h:outputLabel value="Firstname" />
+		<h:inputText value="#{user.firstname}" />
+		<br />
+		<h:outputLabel value="Lastname" />
+		<h:inputText value="#{user.lastname}" />
+		<br />
+		<h:outputLabel value="Age" />
+		<h:inputText value="#{user.age}" />
+		<br />
+		<h:commandButton action="index" value="Submit" />
+		
+		<f:validateWholeBean value="#{user}"></f:validateWholeBean>
+		
+	</h:form>
+
+
+</body>
+</html>
