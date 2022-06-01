@@ -14,7 +14,8 @@
 		nameLabel="Bitte Nachname eingeben"
 		emailLabel="Bitte eine Email eingeben" registerText="Registrieren"
 		emailValue="#{user.email}" firstnameValue="#{user.firstname}"
-		nameValue="#{user.lastname}" registerAction="#{user.login()}"></my:register>
+		nameValue="#{user.lastname}" registerActionListener="#{myActionListener.deleteAction}"
+		></my:register>
 
 	<br />
 
