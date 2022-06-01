@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<h:panelGrid>
+		<f:facet name="header">Zugriff auf die InitParameter als Map</f:facet>
+		<h:dataTable var="item" value="#{servletConfigController.initParams}">
+			<h:column>#{item.key}</h:column>
+			<h:column>#{item.value}</h:column>
+		</h:dataTable>
+	
+	</h:panelGrid>
+
+</body> 
+</html>
