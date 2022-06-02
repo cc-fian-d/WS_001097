@@ -9,6 +9,10 @@
 	</lifecycle>
 
 	<application>
+		<system-event-listener>
+			<system-event-listener-class>ctrl.MyComponentEventListener</system-event-listener-class>
+			<system-event-class>javax.faces.event.PreRenderComponentEvent</system-event-class>
+		</system-event-listener>
 		<!-- Applikations Start -->
 		<system-event-listener>
 			<system-event-listener-class>ctrl.MySystemEventListener</system-event-listener-class>
