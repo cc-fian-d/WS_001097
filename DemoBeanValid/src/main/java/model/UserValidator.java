@@ -14,8 +14,7 @@ public class UserValidator implements ConstraintValidator<UserValid, User>, Seri
 	@Override
 	public boolean isValid(User value, ConstraintValidatorContext context) {
 		/**
-		 * Alle Werte dürfen nicht null sein.
-		 * 
+		 * Kein Wert soll null sein.
 		 */
 		Object[] attribute = new Object[] { value.getAge(), value.getFirstname(), value.getLastname() };
 		boolean tmp = Stream.of(attribute).noneMatch(Objects::isNull);

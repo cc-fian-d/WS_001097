@@ -17,7 +17,6 @@ public class User implements Serializable{
 	private String firstname;// null
 
 //	@NotNull
-	@UserValid
 	private Integer age;// null
 
 	public User() {
