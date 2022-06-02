@@ -61,9 +61,10 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String name, String password, Section section) {
+	public User(String name, String password, String email, Section section) {
 		this.setName(name);
 		this.setPassword(password);
+		this.setEmail(email);
 		this.setSection(section);
 	}
 
@@ -88,7 +89,7 @@ public class User {
 	 * Wegen CDI und dem Proxy Objekt
 	 */
 	public User copy() {
-		return new User(this.getName(), this.getPassword(), this.getSection());
+		return new User(this.getName(), this.getPassword(), this.getEmail(), this.getSection());
 	}
 
 }

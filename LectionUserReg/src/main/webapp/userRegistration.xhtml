@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">
+	user Reg Converter
+	</ui:define>
+
+	<ui:define name="main">
+
+		<h:form id="regOne">
+			<h:messages style="color:red" />
+			<h:outputLabel value="Name" />
+			<h:inputText value="#{user.name}">
+				<f:validateLength maximum="20" />
+			</h:inputText>
+			<br />
+			<h:outputLabel value="Passwort" />
+			<h:inputText value="#{user.password}">
+				<f:validateRegex
+					pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$"></f:validateRegex>
+			</h:inputText>
+			<br />
+			<h:outputLabel value="Email" />
+			<h:inputText value="#{user.email}">
+				<f:converter converterId="mailConverter"></f:converter>
+				<f:validateRegex pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
+			</h:inputText>
+			<h:commandButton action="#{userHandler.addUser}" value="Submit" />
+		</h:form>
+	</ui:define>
+</ui:composition>

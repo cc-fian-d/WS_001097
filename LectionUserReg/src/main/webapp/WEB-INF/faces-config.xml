@@ -6,11 +6,16 @@
 
 
 	<navigation-rule>
-		<from-view-id>/index.xhtml</from-view-id>
+		<from-view-id>/userRegistration.xhtml</from-view-id>
 		<navigation-case>
-			<from-action>#{benutzer.submit}</from-action>
-			<to-view-id>/second.xhtml</to-view-id>
+			<from-action>#{userHandler.addUser}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/userlist.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{userHandler.addUser}</from-action>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/error.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-
 </faces-config>
