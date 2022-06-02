@@ -17,11 +17,12 @@ public class User {
 
 //	@Size(min = 3, max = 7)
 	private String name;
-	
+
 //	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$")
 	private String password;
-	
-	
+
+	private String email;
+
 	private Section section;
 
 	public String getName() {
@@ -38,6 +39,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Section getSection() {
@@ -57,7 +66,7 @@ public class User {
 		this.setPassword(password);
 		this.setSection(section);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(name, password, section);
