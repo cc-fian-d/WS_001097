@@ -1,17 +1,23 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.logging.Logger;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.event.AbortProcessingException;
+import javax.faces.event.ValueChangeEvent;
+import javax.faces.event.ValueChangeListener;
 import javax.inject.Named;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Named
-@RequestScoped
+//@RequestScoped
+@SessionScoped
 @UserValid
-public class User {
+public class User implements Serializable,ValueChangeListener {
 
 	private static final Logger logger = Logger.getLogger("Benutzer");
 
@@ -22,7 +28,7 @@ public class User {
 	private String password;
 
 	private String email;
-
+	
 	private Section section;
 
 	public String getName() {
@@ -68,9 +74,11 @@ public class User {
 		this.setSection(section);
 	}
 
+
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(name, password, section);
+		return Objects.hash(name, password);
 	}
 
 	@Override
@@ -82,7 +90,7 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(name, other.name) && Objects.equals(password, other.password) && section == other.section;
+		return Objects.equals(name, other.name) && Objects.equals(password, other.password);
 	}
 
 	/*
@@ -90,6 +98,12 @@ public class User {
 	 */
 	public User copy() {
 		return new User(this.getName(), this.getPassword(), this.getEmail(), this.getSection());
+	}
+
+	@Override
+	public void processValueChange(ValueChangeEvent event) throws AbortProcessingException {
+		System.out.println(event.getNewValue());
+		
 	}
 
 }

@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">
+	user Reg Converter
+	</ui:define>
+
+	<ui:define name="main">
+
+		<h:form id="userLogin">
+			<h:messages style="color:red" />
+			<h:outputLabel value="Name" />
+			<h:inputText value="#{user.name}">
+			</h:inputText>
+			<br />
+			<h:outputLabel value="Passwort" />
+			<h:inputText value="#{user.password}">
+			</h:inputText>
+			<br />
+			<h:commandButton action="#{userHandler.loginUser}" value="Submit" />
+		</h:form>
+	</ui:define>
+</ui:composition>

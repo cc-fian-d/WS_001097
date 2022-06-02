@@ -29,8 +29,10 @@ public class UserHandler implements Serializable {
 
 	@Inject
 	private User user;
-	
+
 	private List<User> users;
+
+	private List<User> loggedInUsers;
 
 	public List<User> getUsers() {
 		return users;
@@ -39,16 +41,37 @@ public class UserHandler implements Serializable {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	
+
+	public List<User> getLoggedInUsers() {
+		return loggedInUsers;
+	}
+
+	public void setLoggedInUsers(List<User> loggedInUsers) {
+		this.loggedInUsers = loggedInUsers;
+	}
+
 	public UserHandler() {
 		users = new ArrayList<User>();
+		loggedInUsers = new ArrayList<User>();
 	}
-	
+
 	public String addUser() {
 		String result = "fail";
-		if(users.add(user.copy())) {
+		if (users.add(user.copy())) {
 			result = "success";
 		}
+		return result;
+	}
+
+	public String loginUser() {
+		String result = "fail";
+
+		if (users.contains(user.copy())) {
+			
+			loggedInUsers.add(users.get(users.indexOf(user.copy())));
+			result = "success";
+		}
+
 		return result;
 	}
 

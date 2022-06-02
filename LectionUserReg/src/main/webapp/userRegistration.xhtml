@@ -28,6 +28,15 @@
 				<f:converter converterId="mailConverter"></f:converter>
 				<f:validateRegex pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
 			</h:inputText>
+			
+			<h:selectOneMenu id="selectSection" value="#{user.section}">
+				<f:selectItem itemLabel="-- Auswahl --" noSelectionOption="true" />
+				<f:selectItem itemLabel="A" itemValue="A" />
+				<f:selectItem itemLabel="B" itemValue="B" />
+				<f:selectItem itemLabel="AB" itemValue="AB" />
+			</h:selectOneMenu>
+			<h:message for="selectSektion" />
+			
 			<h:commandButton action="#{userHandler.addUser}" value="Submit" />
 		</h:form>
 	</ui:define>

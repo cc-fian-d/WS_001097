@@ -9,7 +9,8 @@
 	</ui:define>
 
 	<ui:define name="main">
-		<h:dataTable value="#{userHandler.users}" var="item" headerClass="text-center">
+		<h:dataTable value="#{userHandler.loggedInUsers}" var="item"
+			headerClass="text-center">
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Name" />
@@ -30,6 +31,7 @@
 				</f:facet>
 				<h:outputText value="#{item.email}" />
 			</h:column>
+
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Section" />
