@@ -84,6 +84,10 @@
 				 	update="dropArea availableUsers"></p:ajax>
 				</p:droppable>
 
+                <p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
+                    <p:dataExporter type="csv" target="availableUsers" fileName="users"/>
+                </p:commandButton>
+
 			</h:form>
 
 
