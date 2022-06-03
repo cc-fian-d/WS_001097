@@ -9,27 +9,37 @@
 
 			<p:menubar>
 				<p:menuitem value="Home" outcome="home" icon="pi pi-home" />
-				
+
 				<p:submenu label="Erstes Submenu" icon="pi pi-bars">
-					<p:menuitem value="Menubar outcome" outcome="menuBarDesc"/>
+					<p:menuitem value="Menubar outcome" outcome="menuBarDesc" />
 					<p:menuitem value="Menubar URL" url="menuBarDesc" />
-					<p:menuitem value="PrimeFaces 11.0.0" url="https://mvnrepository.com/artifact/org.primefaces/primefaces/11.0.0" />
+					<p:menuitem value="PrimeFaces 11.0.0"
+						url="https://mvnrepository.com/artifact/org.primefaces/primefaces/11.0.0" />
 				</p:submenu>
-				
+
 				<p:submenu label="Drag n Drop" icon="pi pi-fw pi-th-large">
-					<p:menuitem value="Dragable Panels" outcome="dragPanels"/>	
-		 			<p:menuitem value="Dragable Datatable" outcome="dragTable"/>	
+					<p:menuitem value="Dragable Panels" outcome="dragPanels" />
+					<p:menuitem value="Dragable Datatable" outcome="dragTable" />
 				</p:submenu>
-				
+
 				<p:submenu label="Conversation Scope" icon="pi pi-fw pi-th-large">
-					<p:menuitem value="Start Conversation" outcome="firstpage"/>	
+					<p:menuitem value="Start Conversation" outcome="firstpage" />
 				</p:submenu>
-				
+
 				<p:submenu label="Verschiedens" icon="pi pi-fw pi-th-large">
-					<p:menuitem value="JSF Lifecycle" outcome="lifecycle"/>
-					<p:menuitem value="User Idle" outcome="userIdle"/>	
-					<p:menuitem value="Messages" outcome="primMessages"/>
+					<p:menuitem value="JSF Lifecycle" outcome="lifecycle" />
+					<p:menuitem value="User Idle" outcome="userIdle" />
+					<p:menuitem value="Messages" outcome="primMessages" />
 				</p:submenu>
+
+				<f:facet name="options">
+					<p:selectOneMenu>
+						<f:selectItem itemLabel="-- Auswahl --" noSelectionOption="true" />
+						<f:selectItem itemLabel="A" itemValue="A" />
+						<f:selectItem itemLabel="B" itemValue="B" />
+						<f:selectItem itemLabel="A_B" itemValue="A_B" />
+					</p:selectOneMenu>
+				</f:facet>
 
 			</p:menubar>
 

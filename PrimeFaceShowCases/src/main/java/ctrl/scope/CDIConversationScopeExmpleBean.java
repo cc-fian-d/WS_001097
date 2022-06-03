@@ -45,7 +45,6 @@ public class CDIConversationScopeExmpleBean implements Serializable {
 	}
 	
 	public void initConversation() {
-		System.out.println("Conversation gestartet");
 		if(!FacesContext.getCurrentInstance().isPostback() && conversation.isTransient()) {
 			conversation.begin();
 			conversation.setTimeout(500);
