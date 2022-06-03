@@ -78,15 +78,19 @@
 				</p:fieldset>
 
 
-				<p:droppable for="selectedUsers" tolerance="touch" activeStyleClass="ui-state-highlight"
-				 datasource="availableUsers" onDrop="handleDrop">
-				 <p:ajax listener="#{dndUserView.onDropUser}" 
-				 	update="dropArea availableUsers"></p:ajax>
+				<p:droppable for="selectedUsers" tolerance="touch"
+					activeStyleClass="ui-state-highlight" datasource="availableUsers"
+					onDrop="handleDrop">
+					<p:ajax listener="#{dndUserView.onDropUser}"
+						update="dropArea availableUsers"></p:ajax>
 				</p:droppable>
 
-                <p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
-                    <p:dataExporter type="csv" target="availableUsers" fileName="users"/>
-                </p:commandButton>
+				<p:commandButton value="CSV" styleClass="p-mr-2 p-mb-2">
+					<p:dataExporter type="csv" target="availableUsers" fileName="users" />
+				</p:commandButton>
+				<p:commandButton value="PDF" styleClass="p-mr-2 p-mb-2">
+					<p:dataExporter type="pdf" target="availableUsers" fileName="users" />
+				</p:commandButton>
 
 			</h:form>
 
