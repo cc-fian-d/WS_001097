@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/main.xhtml">
+	<ui:define name="eventListeners">
+	</ui:define>
+
+	<ui:define name="header">
+	</ui:define>
+
+	<ui:define name="main">
+		<h:outputText value="SecondPage Fortfahren.."></h:outputText>
+		<br />
+		<br />
+		<h:outputText value="#{cdiConversationScope.nachricht}" />
+		<br />
+		<br />
+		<h:link outcome="/thirdpage.xhtml" value="Letzte Seite des Scopes">
+			<f:param name="cid" value="#{cdiConversationScope.conversation.id}"/>
+		</h:link>
+	</ui:define>
+
+</ui:composition>

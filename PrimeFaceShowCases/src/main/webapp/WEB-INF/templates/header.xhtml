@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<div class="card">
+		<h:form>
+
+			<p:menubar>
+				<p:menuitem value="Home" outcome="home" icon="pi pi-home" />
+				
+				<p:submenu label="Erstes Submenu" icon="pi pi-bars">
+					<p:menuitem value="Menubar outcome" outcome="menuBarDesc"/>
+					<p:menuitem value="Menubar URL" url="menuBarDesc" />
+					<p:menuitem value="PrimeFaces 11.0.0" url="https://mvnrepository.com/artifact/org.primefaces/primefaces/11.0.0" />
+				</p:submenu>
+				
+				<p:submenu label="Drag n Drop" icon="pi pi-fw pi-th-large">
+					<p:menuitem value="Dragable Panels" outcome="dragPanels"/>	
+		 			<p:menuitem value="Dragable Datatable" outcome="dragTable"/>	
+				</p:submenu>
+				
+				<p:submenu label="Conversation Scope" icon="pi pi-fw pi-th-large">
+					<p:menuitem value="Start Conversation" outcome="firstpage"/>	
+				</p:submenu>
+
+			</p:menubar>
+
+
+
+		</h:form>
+
+	</div>
+
+
+
+</ui:composition>

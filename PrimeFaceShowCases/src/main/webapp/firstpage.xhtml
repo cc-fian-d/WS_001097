@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/main.xhtml">
+	<ui:define name="eventListeners">
+		<f:event listener="#{cdiConversationScope.initConversation}"
+			type="preRenderView"></f:event>
+	</ui:define>
+
+	<ui:define name="header">
+	</ui:define>
+
+	<ui:define name="main">
+		<h:outputText value="Start des ConversationScopes" />
+		<br />
+		<br />
+		<h:form>
+			<h:outputText value="#{cdiConversationScope.nachricht}" />
+			<h:commandButton value="Andere Nachricht Abfragen" type="submit">
+				<f:ajax execute="@form"
+					listener="#{cdiConversationScope.wechsleNachricht}" render="@form" />
+			</h:commandButton>
+			<br />
+			<br />
+			<h:commandLink action="#{cdiConversationScope.next}"
+				value="Mit dieser Nachricht fortfahren" />
+		</h:form>
+	</ui:define>
+
+</ui:composition>

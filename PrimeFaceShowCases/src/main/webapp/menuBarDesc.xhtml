@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/main.xhtml">
+	<ui:define name="eventListeners">
+	</ui:define>
+
+	<ui:define name="header">Menubar
+	</ui:define>
+
+	<ui:define name="main">
+
+		<p:panelGrid columns="2" layout="grid"
+			styleClass="showcase-text-align-center">
+
+			<p:card>
+				<f:facet name="title">
+					Menubar
+				</f:facet>
+
+				<p>Eine Menubar kann aus Submenus und Menuitems bestehen.</p>
+			</p:card>
+
+			<p:card>
+				<f:facet name="title">
+					Submenu
+				</f:facet>
+
+				<p>Mit dem Submenu kann eine Menubar Strukturiert werden</p>
+			</p:card>
+
+
+		</p:panelGrid>
+
+		<p:card>
+			<f:facet name="title">
+					MenuItem
+				</f:facet>
+			<p>Mit dem Menuitem werden die Einträge erstellt Ein Menuitem
+				kann u.a. über folgende tags gesteuert werden</p>
+			<ul>
+				<li>outcome: folgt den Navigationsregeln</li>
+				<li>url: Ohne Navigationsregeln</li>
+			</ul>
+		</p:card>
+
+	</ui:define>
+
+</ui:composition>
