@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/main.xhtml">
+	<ui:define name="eventListeners">
+	</ui:define>
+
+	<ui:define name="header">
+		<p>
+			Lifecycle ist eine Hilfskomponente, die die Ausführungszeit jeder
+			JSF-Phase anzeigt.<br /> Sie synchronisiert sich auch automatisch
+			nach jeder AJAX-Anfrage
+		</p>
+	</ui:define>
+
+	<ui:define name="main">
+
+		<div class="card">
+			<h:form>
+				<p:commandButton value="Leerer Ajax Request" update="@none"
+					styleClass="p-mr-2" />
+				<h:commandButton value="Dummy Ajax Request">
+					<f:ajax render="@none" />
+				</h:commandButton>
+				<p:lifecycle />
+			</h:form>
+		</div>
+
+	</ui:define>
+
+</ui:composition>

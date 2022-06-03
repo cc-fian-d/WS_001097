@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/main.xhtml">
+	<ui:define name="eventListeners">
+	</ui:define>
+
+	<ui:define name="header">
+	</ui:define>
+
+	<ui:define name="main">
+		<h:form>
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<h5 class="p-mt-0">Severities</h5>
+			<p:commandButton value="Info" action="#{messagesView.info}"
+				styleClass="p-mr-2" />
+			<p:commandButton value="Warn" action="#{messagesView.warn}"
+				styleClass="p-mr-2 ui-button-warning" />
+			<p:commandButton value="Error" action="#{messagesView.error}"
+				styleClass="ui-button-danger" />
+
+		</h:form>
+		
+		
+		<h:form>
+		
+			<p:panelGrid id="grid" columns="3" cellpadding="5">
+				<p:outputLabel for="default" value="Standard"/>
+				<p:inputText id="default" required="true" />
+				<p:message for="default"/>
+				
+				<p:outputLabel for="id_text" value="Text"/>
+				<p:inputText id="id_text" required="true" />
+				<p:message for="id_text" display="text"/>
+				
+				<p:outputLabel for="id_icon" value="Icon"/>
+				<p:inputText id="id_icon" required="true" />
+				<p:message for="id_icon" display="icon"/>
+				
+				<p:outputLabel for="id_tool" value="ToolTip"/>
+				<p:inputText id="id_tool" required="true" />
+				<p:message for="id_tool" display="tooltip"/>
+			</p:panelGrid>
+		
+			<p:commandButton id="submitButton" value="Absenden" update="grid"/>
+		</h:form>
+		
+	</ui:define>
+
+</ui:composition>
